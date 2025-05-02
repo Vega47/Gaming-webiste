@@ -1,0 +1,283 @@
+* {
+  font-family: "Cascadia Mono", sans-serif;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+:root {
+  --main--color: #3a497b;
+}
+body {
+  background-color: #272b30;
+  position: relative;
+}
+.nav-bar {
+  background-color: var(--main--color);
+  position: fixed;
+  z-index: 11111;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.nav-bar .container .logo img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  padding: 10px;
+  background-color: transparent;
+  border: 3px solid #1280b3;
+}
+
+.nav-bar .container .navtaps ul li {
+  color: white;
+  margin-left: 40px;
+  padding: 10px 10px;
+  border-radius: 30px;
+  border: 3px solid transparent;
+  font-weight: 900;
+  cursor: pointer;
+  font-size: 17px;
+}
+.active {
+  transition: all 0.5s ease-in-out;
+  color: #1280b3 !important;
+  border-color: #1280b3 !important;
+}
+
+.nav-bar .container .fallen-toglle .icon {
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.nav-bar .container .fallen-toglle .icon:hover {
+  transition: all 0.5s ease-in-out;
+  color: #1280b3;
+  border-color: #1280b3;
+  transform: rotateZ(90deg);
+}
+.nav-bar .container .fallen-toggle-elements {
+  background-color: #3a497b;
+  width: 100%;
+  top: 91px;
+  z-index: 33333333333333333;
+  position: absolute;
+}
+.nav-bar .container .fallen-toggle-elements ul li {
+  color: white;
+  padding: 10px 10px;
+  margin-bottom: 20px;
+  font-weight: 900;
+  border-bottom: 3px solid transparent;
+  font-size: 17px;
+}
+.nav-bar .container .fallen-toggle-elements ul li:hover {
+  color: #1280b3;
+  border-color: #1280b3;
+  transition: 0.5s all ease-in-out;
+  cursor: pointer;
+}
+.nav-bar .container .fallen-toggle-elements .back-gr {
+  background-color: transparent;
+}
+.landing {
+  width: 100%;
+  height: 400px;
+  background-image: linear-gradient(#272b30a1, #272b30), url(/imgs/mw3.jpg);
+  background-size: cover;
+  background-position: center top;
+  position: relative;
+  border: none;
+}
+.landing .box {
+  position: absolute;
+  top: 200px;
+}
+.landing .card {
+  background-color: #3a497b;
+  filter: grayscale(60%);
+  cursor: pointer;
+  width: 24.3%;
+}
+.landing .card:hover {
+  transition: 0.5s all ease-in-out;
+  transform: scale(1.1);
+  z-index: 11;
+  filter: grayscale(0);
+}
+
+.landing .card .image .game-name span {
+  color: white;
+  padding: 3px;
+  border-radius: 15px;
+}
+.landing .card .image .game-desc {
+  color: #939598;
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+.game-details {
+  background-color: #27282b;
+  position: relative;
+  z-index: 1111111;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+.game-details .section .details h3 span {
+  background-color: #1280b3;
+  padding: 3px 5px;
+  border-radius: 5px;
+}
+.game-details .section .details button {
+  background-color: red;
+  margin-bottom: 20px;
+  border: none;
+  background-color: #3a497b;
+  color: white;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+.game-details .section .details button:hover {
+  background-color: #1280b3;
+  transition: 0.5s ease-in-out all;
+}
+.game-details .header .icon:hover i {
+  color: #1280b3;
+  cursor: pointer;
+  transition: 0.5 all ease-in-out;
+}
+@media screen and (max-width: 920px) {
+  .nav-bar .container .navtaps {
+    display: none !important;
+  }
+  .nav-bar .container .fallen-toglle .icon {
+    display: block !important;
+  }
+  .landing {
+    display: flex;
+    flex-direction: column;
+  }
+  .landing .card {
+    width: 100%;
+    margin-inline: auto;
+  }
+  .game-details {
+    flex-direction: column !important;
+  }
+  .game-details .section {
+    flex-direction: column !important;
+  }
+  .game-details .section .img {
+    width: 100%;
+  }
+}
+/* .loader {
+  height: 60px;
+  z-index: 4444444;
+  aspect-ratio: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader::before,
+.loader::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transform-origin: bottom;
+}
+.loader::after {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(at 75% 15%, #fffb, #0000 35%),
+    radial-gradient(at 80% 40%, #0000, #0008),
+    radial-gradient(circle 5px, #fff 94%, #0000),
+    radial-gradient(circle 10px, #000 94%, #0000),
+    linear-gradient(#f93318 0 0) top / 100% calc(50% - 5px),
+    linear-gradient(#fff 0 0) bottom/100% calc(50% - 5px) #000;
+  background-repeat: no-repeat;
+  animation: l20 1s infinite cubic-bezier(0.5, 120, 0.5, -120);
+}
+.loader::before {
+  background: #ddd;
+  width: 200px;
+  height: 200px;
+  filter: blur(8px);
+  transform: scaleY(0.4) translate(-13px, 0px);
+}
+@keyframes l20 {
+  30%,
+  70% {
+    transform: rotate(0deg);
+  }
+  49.99% {
+    transform: rotate(0.2deg);
+  }
+  50% {
+    transform: rotate(-0.2deg);
+  }
+} */
+/* HTML: <div class="loader"></div> */
+.loader {
+  background-color: #1280b37a;
+  position: fixed;
+  z-index: 2222222222;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+/* HTML: <div class="loader"></div> */
+.loader1 {
+  --s: 25px;
+  --g: 5px;
+
+  height: calc(1.353 * var(--s) + var(--g));
+  aspect-ratio: 3;
+  background: linear-gradient(#3a497b 0 0) left/33% 100% no-repeat,
+    conic-gradient(
+      from -90deg at var(--s) calc(0.353 * var(--s)),
+      #fff 135deg,
+      #666 0 270deg,
+      #aaa 0
+    );
+  background-blend-mode: multiply;
+  --_m: linear-gradient(
+      to bottom right,
+      #0000 calc(0.25 * var(--s)),
+      #000 0 calc(100% - calc(0.25 * var(--s)) - 1.414 * var(--g)),
+      #0000 0
+    ),
+    conic-gradient(
+      from -90deg at right var(--g) bottom var(--g),
+      #000 90deg,
+      #0000 0
+    );
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  background-size: calc(100% / 3) 100%;
+  -webkit-mask-size: calc(100% / 3) 100%;
+  mask-size: calc(100% / 3) 100%;
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+  animation: l7 steps(3) 1.5s infinite;
+}
+@keyframes l7 {
+  to {
+    background-position: 150% 0%;
+  }
+}
