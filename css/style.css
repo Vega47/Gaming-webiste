@@ -85,7 +85,7 @@ body {
 .landing {
   width: 100%;
   height: 400px;
-  background-image: linear-gradient(#272b30a1, #272b30), url(imgs/mw3.jpg);
+  background-image: linear-gradient(#272b30a1, #272b30), url(../imgs/mw3.jpg);
   background-size: cover;
   background-position: center top;
   position: relative;
